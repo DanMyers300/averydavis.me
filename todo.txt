@@ -1,0 +1,12 @@
+ 
+setup 404 page:
+	- (https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
+
+add components:
+	- header
+	- footer
+	- main
+
+add basic layout to test theming
+
+with tailwind match Callum theme as much as possible
