@@ -35,3 +35,5 @@ Academic Coaching is for students who need extra help with organization and buil
 In both Academic Coaching and Tutoring, I will send an email to the parent/guardian discussing the students progress, grades, future assignments, and what we did during our session.
 
 Client Testimonials:
+
+Coming soon!
