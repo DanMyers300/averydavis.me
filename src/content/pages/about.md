@@ -34,8 +34,4 @@ Academic Coaching is for students who need extra help with organization and buil
 
 In both Academic Coaching and Tutoring, I will send an email to the parent/guardian discussing the students progress, grades, future assignments, and what we did during our session.
 
-Payment
-
-I accept payment via Venmo and Zelle. I charge $50/hr for Academic Tutoring, and $60/hr for Academic Coaching. I offer tutoring once or more a week, depending on the student's needs! I will request payment every two weeks on Sunday. If you need to cancel our weekly appointment, let me know as soon as you can! If you cancel within 24 hours of our appointment, or do not show up to the Zoom meeting, I will still bill you for the session.
-
 Client Testimonials:
