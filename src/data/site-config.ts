@@ -19,12 +19,6 @@ export type Hero = {
     backgroundImage?: Image;
 };
 
-export type Subscribe = {
-    title?: string;
-    text?: string;
-    formUrl: string;
-};
-
 export type SiteConfig = {
     logo?: Image;
     title: string;
@@ -34,20 +28,19 @@ export type SiteConfig = {
     secondaryNavLinks?: Link[];
     socialLinks?: SocialLink[];
     hero?: Hero;
-    subscribe?: Subscribe;
     postsPerPage?: number;
 };
 
 const siteConfig: SiteConfig = {
     logo: {
-        src: '/logo.svg',
-        alt: 'Ovidius logo'
+        src: '/signature.svg',
+        alt: 'Avery Logo'
     },
-    title: 'Ovidius',
-    description: 'Astro.js and Tailwind CSS theme for blogging by justgoodui.com',
+    title: 'Avery Davis',
+    description: 'Avery Davis Tutoring',
     image: {
-        src: '/ovidius-preview.jpg',
-        alt: 'Ovidius - Astro.js and Tailwind CSS theme'
+        src: '/hero.jpg',
+        alt: 'Avery Davis Tutoring'
     },
     primaryNavLinks: [
         {
@@ -55,10 +48,6 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Blog',
-            href: '/blog'
-        },
-        {
             text: 'About',
             href: '/about'
         },
@@ -66,10 +55,6 @@ const siteConfig: SiteConfig = {
             text: 'Contact',
             href: '/contact'
         },
-        {
-            text: 'Download Theme',
-            href: 'https://github.com/JustGoodUI/ovidius-astro-theme'
-        }
     ],
     secondaryNavLinks: [
         {
@@ -77,50 +62,27 @@ const siteConfig: SiteConfig = {
             href: '/about'
         },
         {
-            text: 'Terms of Service',
-            href: '/terms'
-        },
-        {
             text: 'Contact',
             href: '/contact'
-        },
-        {
-            text: 'Download Theme',
-            href: 'https://github.com/JustGoodUI/ovidius-astro-theme'
         }
     ],
-    socialLinks: [
-        {
-            text: 'Go to GitHub repo',
-            href: 'https://github.com/JustGoodUI/ovidius-astro-theme',
-            icon: 'github'
-        },
-        {
-            text: 'Follow on Instagram',
-            href: 'https://instagram.com/',
-            icon: 'instagram'
-        },
-        {
-            text: 'Follow on X',
-            href: 'https://twitter.com/justgoodui',
-            icon: 'x-twitter'
-        }
-    ],
+    // socialLinks: [
+    //     {
+    //         text: 'Follow on Instagram',
+    //         href: 'https://instagram.com/',
+    //         icon: 'instagram'
+    //     },
+    // ],
     hero: {
         title: 'Hi there!',
-        text: "My name is Justin Case. I'm a freelance front-end developer, author and speaker based in Austin, TX. It's nice to meet you.",
+        text: "My name is Avery Davis! I'm a tutor and I love to help students learn.",
         avatar: {
             src: '/avatar.jpg',
-            alt: 'Justin Case'
+            alt: 'Avery Davis'
         },
         backgroundImage: {
-            src: '/hero.webp'
+            src: '/hero.jpg'
         }
-    },
-    subscribe: {
-        title: 'Subscribe to Ovidius Newsletter',
-        text: 'One update per week. All the latest news directly in your inbox.',
-        formUrl: 'https://justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117&amp;f_id=005c48e2f0'
     },
     postsPerPage: 5
 };
