@@ -33,7 +33,7 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     logo: {
-        src: '/signature.svg',
+        src: '/favicon.ico',
         alt: 'Avery Logo'
     },
     title: 'Avery Davis',
@@ -55,6 +55,10 @@ const siteConfig: SiteConfig = {
             text: 'Contact',
             href: '/contact'
         },
+        {
+            text: 'Payment',
+            href: '/payment'
+        },
     ],
     secondaryNavLinks: [
         {
@@ -64,7 +68,11 @@ const siteConfig: SiteConfig = {
         {
             text: 'Contact',
             href: '/contact'
-        }
+        },
+        {
+            text: 'Payment',
+            href: '/payment'
+        },
     ],
     // socialLinks: [
     //     {
