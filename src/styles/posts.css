@@ -1,0 +1,23 @@
+.post p {
+  @apply my-4 leading-7;
+}
+
+.post code {
+  @apply rounded-sm bg-gray-600 px-1 py-[2px] text-white;
+}
+
+.post h2 {
+  @apply my-6 text-3xl font-bold text-neutral-100;
+}
+
+.post h3 {
+  @apply my-6 text-xl font-bold text-neutral-100;
+}
+
+.post a {
+  @apply text-neon-green;
+}
+
+.post ul {
+  @apply list-disc ps-6 leading-8 text-gray-300;
+}

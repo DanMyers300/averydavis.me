@@ -1,0 +1,4 @@
+User-agent: Googlebot-Image
+Disallow: /assets/
+
+Sitemap: https://www.paulvall.dev/sitemap-index.xml

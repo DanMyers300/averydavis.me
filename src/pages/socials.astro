@@ -1,0 +1,44 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { socials } from '@utils/data'
+import { Icon } from 'astro-icon'
+
+type Socials = {
+  name: string
+  url: string
+  imgSrc: string
+  ariaLabel: string
+}
+---
+
+<Layout
+  title='Paul Valladares | Socials'
+  description='Links for social media of Paul Valladares'
+>
+  <main class='mb-28 mt-14'>
+    <img
+      src='https://avatars.githubusercontent.com/u/85648028?v=4'
+      class='mx-auto mb-10 w-40 rounded-full border-2 border-solid border-white'
+    />
+    <h2 class='mb-3 px-2 text-center text-3xl text-white'>Paul Valladares</h2>
+    <p class='mb-10 px-2 text-center text-2xl font-bold'>
+      Frontend Developer based in Mexico
+    </p>s
+    <div class='flex flex-col items-center justify-center gap-6 md:gap-8'>
+      {
+        socials.map((opt: Socials) => {
+          return (
+            <a
+              class='text-md flex w-[350px] items-center justify-center rounded bg-neon-green px-8 py-3 text-center font-medium text-gray-800 transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-neon-green md:w-[450px]'
+              href={opt.url}
+              aria-label={opt.ariaLabel}
+            >
+              <Icon name={opt.imgSrc} class='mr-2' />
+              <p class='text-gray-800'>{opt.name}</p>
+            </a>
+          )
+        })
+      }
+    </div>
+  </main>
+</Layout>
