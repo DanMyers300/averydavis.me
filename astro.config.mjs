@@ -9,5 +9,5 @@ export default defineConfig({
     site: 'https://averydavis.me',
     integrations: [mdx(), sitemap(), tailwind()],
     output: 'server',
-    adapter: vercelServerless(),
+    adapter: vercel(),
 });
