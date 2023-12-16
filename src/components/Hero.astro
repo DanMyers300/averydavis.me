@@ -8,7 +8,7 @@ const hero = siteConfig.hero;
     (hero?.title || hero?.text || hero?.avatar?.src) && (
         <>
             {hero?.backgroundImage?.src && (
-                <div class="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url(${hero?.backgroundImage?.src})` }} />
+                <div class="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${hero?.backgroundImage?.src})` }} />
             )}
             <section class="px-4 py-12 relative sm:px-8 sm:py-16">
                 <div class="w-full max-w-3xl mx-auto flex flex-col items-center text-center">
@@ -21,9 +21,9 @@ const hero = siteConfig.hero;
                             />
                         </div>
                     )}
-                    {hero?.title && <h1 class:list={['text-4xl font-bold text-slate-900 sm:text-5xl', { 'mt-6': hero?.avatar?.src }]}>{hero?.title}</h1>}
+                    {hero?.title && <h1 class:list={['text-4xl font-bold text-slate-200 sm:text-5xl ', { 'mt-6': hero?.avatar?.src }]}>{hero?.title}</h1>}
                     {hero?.text && (
-                        <p class:list={['text-slate-900 sm:text-lg', { 'mt-4': hero?.title, 'mt-6': hero?.avatar?.src && !hero?.title }]}>{hero?.text}</p>
+                        <p class:list={['text-slate-200 font-bold text-2xl ', { 'mt-4': hero?.title, 'mt-6': hero?.avatar?.src && !hero?.title }]}>{hero?.text}</p>
                     )}
                 </div>
             </section>

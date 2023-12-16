@@ -4,6 +4,6 @@
 
 @layer base {
     :root {
-        --color-primary: 73 40 98; /* #492862 */
+        --color-primary: 128 128 128;
     }
 }

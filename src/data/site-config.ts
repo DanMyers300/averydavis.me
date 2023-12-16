@@ -90,8 +90,8 @@ const siteConfig: SiteConfig = {
     //     },
     // ],
     hero: {
-        title: 'Hi there!',
-        text: "My name is Avery Davis! I'm a tutor and I love to help students learn.",
+        title: 'Hello, I\'m Avery Davis',
+        text: "I'm an academic tutor and coach based in Dallas, TX, with two years of experience dedicated to helping students boost their confidence and improve their academic abilities",
         avatar: {
             src: '/avatar.jpg',
             alt: 'Avery Davis'
@@ -100,7 +100,6 @@ const siteConfig: SiteConfig = {
             src: '/hero.jpg'
         }
     },
-    postsPerPage: 5
 };
 
 export default siteConfig;
