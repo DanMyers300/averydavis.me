@@ -59,6 +59,10 @@ const siteConfig: SiteConfig = {
             text: 'Payment',
             href: '/payment'
         },
+        {
+            text: 'Calendar',
+            href: '/calendar'
+        }
     ],
     secondaryNavLinks: [
         {
@@ -73,6 +77,10 @@ const siteConfig: SiteConfig = {
             text: 'Payment',
             href: '/payment'
         },
+        {
+            text: 'Calendar',
+            href: '/calendar'
+        }
     ],
     // socialLinks: [
     //     {
