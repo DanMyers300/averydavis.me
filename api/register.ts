@@ -5,7 +5,6 @@ const app = express();
 app.use(express.json());
 
 app.post('/register', (req, res) => {
-  // Assuming the request body contains user registration data
   const { username, email, password } = req.body;
 
   // Perform validation and error checking here
