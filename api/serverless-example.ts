@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-exports.handler = function(
+export default function handler(
   request: VercelRequest,
   response: VercelResponse,
 ) {
