@@ -9,6 +9,6 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
     site: 'https://averydavis.me',
     integrations: [mdx(), sitemap(), tailwind()],
-    output: 'hybrid',
+    output: 'server',
     adapter: vercel()
 });
