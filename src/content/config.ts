@@ -12,24 +12,6 @@ const seoSchema = z.object({
     pageType: z.enum(['website', 'article']).default('website')
 });
 
-const blog = defineCollection({
-    schema: z.object({
-        title: z.string(),
-        excerpt: z.string().optional(),
-        publishDate: z.coerce.date(),
-        updatedDate: z.coerce.date().optional(),
-        featureImage: z
-            .object({
-                src: z.string(),
-                alt: z.string().optional(),
-                caption: z.string().optional()
-            })
-            .optional(),
-        isFeatured: z.boolean().default(false),
-        seo: seoSchema.optional()
-    })
-});
-
 const pages = defineCollection({
     schema: z.object({
         title: z.string(),
@@ -44,4 +26,4 @@ const pages = defineCollection({
     })
 });
 
-export const collections = { blog, pages };
+export const collections = { pages };
