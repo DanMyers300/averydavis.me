@@ -1,11 +1,30 @@
 ---
 ---
 
-<iframe 
-    src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&src=ZTg0MjRjNzk4NzQwYWU1ZDg0ZjI0ZDUyNWUzYzEzZDk4MzZmNTJiODBmYTMzODU2OTZmMmI0ZmI4ODVmNWQ0NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457"
-    style="border:solid 1px #777"
-    width="800"
-    height="600"
-    frameborder="0"
-    scrolling="no">
-</iframe>
+<style>
+    .calendar-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 75%; /* Adjust this value to control the aspect ratio of the calendar */
+    }
+
+    .calendar-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<div class="calendar-container">
+    <iframe 
+        class="calendar-iframe"
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&src=ZTg0MjRjNzk4NzQwYWU1ZDg0ZjI0ZDUyNWUzYzEzZDk4MzZmNTJiODBmYTMzODU2OTZmMmI0ZmI4ODVmNWQ0NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457"
+        style="border:solid 1px #777"
+        width="800"
+        height="600"
+        frameborder="0"
+        scrolling="no">
+    </iframe>
+</div>
