@@ -1,0 +1,41 @@
+---
+// Your frontmatter script here
+---
+
+<form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <button type="button" id="registerButton">Register</button>
+</form>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const registerButton = document.getElementById('registerButton');
+        registerButton.addEventListener('click', registerUser);
+    });
+
+    async function registerUser() {
+        const username = (document.getElementById('username') as HTMLInputElement)?.value;
+        const email = (document.getElementById('email') as HTMLInputElement)?.value;
+        const password = (document.getElementById('password') as HTMLInputElement)?.value;
+
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password }),
+        });
+
+        if (response.ok) {
+            const userData = await response.json();
+            alert(`User registered successfully!\nUserID: ${userData.userId}`);
+        } else {
+            alert('Failed to register user.');
+        }
+    }
+</script>
