@@ -48,11 +48,11 @@ If denied nice denial email is sent
 
 
 TO-DO:
-    - Add FAQ item
-    - Add Services item
     - Redesign About page
         - Follow: https://kinsta.com/wp-content/uploads/2021/11/pasted-image-0-30.png
     - Create purchase page
         - Add option to purchase single class
         - Add option to purchase reoccuring classes
     - Design success page
+    - Fill out FAQ page
+    - Fill out services page

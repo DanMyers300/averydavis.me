@@ -43,22 +43,16 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
+            text: 'Services',
+            href: '/services'
+        },
+        {
             text: 'About',
             href: '/about'
         },
         {
-            text: 'Contact',
-            href: '/contact'
-        },
-        {
-            text: 'Payment',
-            href: '/payment'
-        }
-    ],
-    secondaryNavLinks: [
-        {
-            text: 'About',
-            href: '/about'
+            text: 'FAQ',
+            href: '/faq'
         },
         {
             text: 'Contact',
