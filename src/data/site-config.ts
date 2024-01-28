@@ -8,10 +8,6 @@ export type Link = {
     text: string;
 };
 
-export type SocialLink = Link & {
-    icon: 'codepen' | 'dev' | 'facebook' | 'github' | 'instagram' | 'linkedin' | 'medium' | 'x-twitter';
-};
-
 export type Hero = {
     title?: string;
     text?: string;
@@ -26,7 +22,6 @@ export type SiteConfig = {
     image?: Image;
     primaryNavLinks?: Link[];
     secondaryNavLinks?: Link[];
-    socialLinks?: SocialLink[];
     hero?: Hero;
     postsPerPage?: number;
 };
@@ -58,10 +53,6 @@ const siteConfig: SiteConfig = {
         {
             text: 'Payment',
             href: '/payment'
-        },
-        {
-            text: 'Calendar',
-            href: '/calendar'
         }
     ],
     secondaryNavLinks: [
@@ -76,19 +67,8 @@ const siteConfig: SiteConfig = {
         {
             text: 'Payment',
             href: '/payment'
-        },
-        {
-            text: 'Calendar',
-            href: '/calendar'
         }
     ],
-    // socialLinks: [
-    //     {
-    //         text: 'Follow on Instagram',
-    //         href: 'https://instagram.com/',
-    //         icon: 'instagram'
-    //     },
-    // ],
     hero: {
         title: 'Hello, I\'m Avery Davis',
         text: "I'm an academic tutor and coach based in Dallas, TX, with two years of experience dedicated to helping students boost their confidence and improve their academic abilities",
