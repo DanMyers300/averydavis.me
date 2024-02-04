@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import siteConfig from '../data/site-config';
+import { HiAcademicCap, HiCalculator, HiChartPie, HiColorSwatch } from 'react-icons/hi';
+---
+
+<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+    <div style={{ display: 'flex', overflow: 'hidden' }}>
+        <img
+            src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
+            style={{ width: '50vw', height: '90vh', objectFit: 'cover' }}
+        />
+        <ul
+            style={{
+                listStyle: 'none',
+                padding: '0',
+                textAlign: 'center',
+                flex: '1',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-around',
+                alignItems: 'center' // Center both icons and text vertically
+            }}
+        >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <HiChartPie style={{ fontSize: '2.5em', marginRight: '0.5em' }} />
+                <li style={{ fontSize: '2.5em', fontWeight: 'bold' }}>Item 1</li>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <HiCalculator style={{ fontSize: '2.5em', marginRight: '0.5em' }} />
+                <li style={{ fontSize: '2.5em', fontWeight: 'bold' }}>Item 2</li>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <HiAcademicCap style={{ fontSize: '2.5em', marginRight: '0.5em' }} />
+                <li style={{ fontSize: '2.5em', fontWeight: 'bold' }}>Item 3</li>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <HiColorSwatch style={{ fontSize: '2.5em', marginRight: '0.5em' }} />
+                <li style={{ fontSize: '2.5em', fontWeight: 'bold' }}>Item 4</li>
+            </div>
+        </ul>
+    </div>
+</BaseLayout>

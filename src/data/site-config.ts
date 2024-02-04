@@ -43,10 +43,6 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Services',
-            href: '/services'
-        },
-        {
             text: 'About',
             href: '/about'
         },
@@ -59,9 +55,9 @@ const siteConfig: SiteConfig = {
             href: '/contact'
         },
         {
-            text: 'Payment',
-            href: '/payment'
-        }
+            text: 'Services',
+            href: '/services'
+        },
     ],
     hero: {
         title: 'Hello, I\'m Avery Davis',

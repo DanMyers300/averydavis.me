@@ -19,8 +19,6 @@ Changes:
 
 8: Carousel of client testimonials
 
-9: Expand on the header and display all items at all times.
-
 
 Services:
 - Single class purchase
@@ -50,9 +48,9 @@ If denied nice denial email is sent
 TO-DO:
     - Redesign About page
         - Follow: https://kinsta.com/wp-content/uploads/2021/11/pasted-image-0-30.png
-    - Create purchase page
+    - Redesign services page
+    - Create purchase page for both options
         - Add option to purchase single class
         - Add option to purchase reoccuring classes
     - Design success page
     - Fill out FAQ page
-    - Fill out services page
