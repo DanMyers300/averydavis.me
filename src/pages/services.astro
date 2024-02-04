@@ -7,17 +7,19 @@ import siteConfig from '../data/site-config';
     <div class="services-container">
         {
             siteConfig.services?.map((service) => (
-                <a href={service.url} class="service-link"> <!-- Add this line -->
+                <a href={service.url} class="service-link">
                     <section class="service-section">
-                        <div class="image-container">
-                            <img src={service.image.src} alt={service.image.alt} />
-                            <div class="overlay">
-                                <h1>{service.title}</h1>
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src={service.image.src} alt={service.image.alt} />
+                                <div class="overlay">
+                                    <h1>{service.title}</h1>
+                                </div>
                             </div>
+                            <p>{service.description}</p>
                         </div>
-                        <p>{service.description}</p>
                     </section>
-                </a> <!-- And this line -->
+                </a>
             ))
         }
     </div>
@@ -29,7 +31,6 @@ import siteConfig from '../data/site-config';
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
-        gap: 20px;
     }
 
     .service-section {
@@ -40,21 +41,33 @@ import siteConfig from '../data/site-config';
     }
 
     .service-link {
-        display: inline-block;  /* Add this line */
-        width: calc(33.33% - 20px);  /* Add this line */
+        display: inline-block;
+        width: calc(33.33% - 20px);
         text-decoration: none;
         color: inherit;
     }
 
-    .service-link:hover {
-        /* Add this block */
-        opacity: 0.8;
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     @media (max-width: 600px) {
-        .service-section {
-            flex-basis: 100%;
+        .service-link,
+        .content-container {
+            width: 100%;
         }
+
+        .services-container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .service-link:hover {
+        opacity: 0.8;
     }
 
     .image-container {
@@ -65,8 +78,9 @@ import siteConfig from '../data/site-config';
     }
 
     .image-container img {
-        height: 100%;
-        width: 100%; /* Add this line */
+        max-width: 100%;
+        height: auto;
+        min-width: 200px;
         object-fit: cover;
     }
 
