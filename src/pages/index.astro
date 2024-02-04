@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import siteConfig from '../data/site-config';
+import Carousel from '../components/Carousel.astro';
 ---
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
@@ -9,5 +10,6 @@ import siteConfig from '../data/site-config';
         <Hero />
     </div>
     <main class="grow py-12 sm:py-16">
+        <Carousel />
     </main>
 </BaseLayout>
