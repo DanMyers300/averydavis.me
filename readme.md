@@ -49,5 +49,3 @@ TO-DO:
         - Add option to purchase reoccuring classes
     - Design success page
     - Fill out FAQ page
-    - Add client testimonial carousel
-    - Add Subject scroll bar
