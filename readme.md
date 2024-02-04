@@ -46,6 +46,7 @@ If denied nice denial email is sent
 
 
 TO-DO:
+    - Ensure mobile compatability for new header and about page.
     - Redesign services page
     - Create purchase page for both options
         - Add option to purchase single class
