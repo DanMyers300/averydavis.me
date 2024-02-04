@@ -46,8 +46,6 @@ If denied nice denial email is sent
 
 
 TO-DO:
-    - Redesign About page
-        - Follow: https://kinsta.com/wp-content/uploads/2021/11/pasted-image-0-30.png
     - Redesign services page
     - Create purchase page for both options
         - Add option to purchase single class
