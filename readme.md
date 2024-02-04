@@ -4,8 +4,6 @@ Changes:
 
 2: add in free 15 minute zoom/phone consult, and ability to request one w parent email/phone number, perhaps send a different calendly link with 15 min sessions. button on homepage
 
-3: Want academic tutoring vs coaching to be a dropdown, and include a session overview for each (I need to write)
-
 4: Want a dropdown for "How to Schedule session" Thinking instead of linking to google calendar, having payment end up redirecting you to a calendly with options for reoccuring sessions/one time sessions with parents email/phone number/their name/students name. After they schedule, auto email sends with our appointment date/time and my zoom personal room and password.
 
 5: i want to be able to assess a lot more from first look. i.e. how much I charge "from 45 an hour"
@@ -46,9 +44,10 @@ If denied nice denial email is sent
 
 
 TO-DO:
-    - Redesign services page
     - Create purchase page for both options
         - Add option to purchase single class
         - Add option to purchase reoccuring classes
     - Design success page
     - Fill out FAQ page
+    - Add client testimonial carousel
+    - Add Subject scroll bar
