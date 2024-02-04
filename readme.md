@@ -47,5 +47,4 @@ TO-DO:
     - Create purchase page for both options
         - Add option to purchase single class
         - Add option to purchase reoccuring classes
-    - Design success page
     - Fill out FAQ page

@@ -1,4 +1,5 @@
 ---
-title: $$
+title: Success
 ---
-We appreciate your business! If you have any questions, please email us!
+
+Your request has been sent! Please refer to your email for further communication.
