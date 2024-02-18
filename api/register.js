@@ -22,9 +22,9 @@ export default async function handler(req, res) {
 
             // Send mail with defined transport object
             let info = await transporter.sendMail({
-                from: `"Dan" <${process.env.SMTP_USER}>`,
+                from: `"Averydavis.me" <${process.env.SMTP_USER}>`,
                 to: 'danielmyers300@gmail.com',
-                subject: 'Form Submission',
+                subject: 'Request for Tutoring',
                 html: `
                     <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Student's Name:</strong> ${studentName}</p>
