@@ -36,7 +36,7 @@ export default async function handler(req, res) {
                     <p><strong>Service Requested:</strong> ${service}</p>
                     <p><strong>Frequency:</strong> ${frequency}</p>
                     <p><strong>Amount:</strong> $${amount}</p>
-                    <p><strong>Invoice:</strong> Thank you for your request. Below is the invoice for the tutoring service:</p>
+                    <p><strong>Invoice:</strong>Below is the invoice for the tutoring service:</p>
                     <pre>
                         -----------------------------------
                         Service: ${service}
@@ -59,10 +59,7 @@ export default async function handler(req, res) {
     }
 }
 
-// Function to calculate amount based on service and frequency
 function calculateAmount(service, frequency) {
-    // Here you can implement your logic to calculate the amount based on service and frequency
-    // For simplicity, assuming a flat rate for all services and frequencies
-    const flatRate = 50; // Change this as per your pricing
+    const flatRate = 50;
     return flatRate;
 }

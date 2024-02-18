@@ -50,16 +50,12 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         // {
-        //     text: 'About',
-        //     href: '/about'
+        //     text: 'Testimonials',
+        //     href: '/testimonials'
         // },
         {
             text: 'FAQ',
             href: '/faq'
-        },
-        {
-            text: 'Contact',
-            href: '/contact'
         },
         {
             text: 'Services',
