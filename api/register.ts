@@ -1,54 +1,42 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import express from 'express';
+require('dotenv').config();
 
-const app = express();
-app.use(express.json());
+const nodemailer = require('nodemailer');
 
-app.post('/register', (req, res) => {
-  const { username, email, password } = req.body;
+export default async function handler(req:any, res:any) {
+    if (req.method === 'POST') {
+        const { name, studentName, phone, email, service, frequency } = req.body;
 
-  // Perform validation and error checking here
+        // Create a transporter object using SMTP transport
+        let transporter = nodemailer.createTransport({
+            service: process.env.SMTP_SERVICE,
+            host: process.env.SMTP_HOST,
+            port: process.env.SMTP_PORT,
+            secure: true,
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+            },
+        });
 
-  // Assuming you have a function to save user data to a database
-  // You should use a secure password hashing mechanism (e.g., bcrypt)
-  const userId = saveUserDataToDatabase(username, email, password);
+        // Send mail with defined transport object
+        let info = await transporter.sendMail({
+            from: `"Your Name" <${process.env.SMTP_USER}>`,
+            to: 'contact@danmyers.net',
+            subject: 'Form Submission',
+            html: `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Student's Name:</strong> ${studentName}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Service Requested:</strong> ${service}</p>
+                <p><strong>Frequency:</strong> ${frequency}</p>
+            `,
+        });
 
-  res.status(201).json({ userId, username, email });
-});
+        console.log('Message sent: %s', info.messageId);
 
-// Helper function to save user data to a database (you would need to implement this)
-function saveUserDataToDatabase(username, email, password) {
-  // In a real-world scenario, save this data securely to a database
-  // For simplicity, let's just return a placeholder user ID
-  const userId = Math.floor(Math.random() * 1000) + 1;
-  return userId;
+        res.status(200).json({ message: 'Email sent successfully' });
+    } else {
+        res.status(405).json({ message: 'Method Not Allowed' });
+    }
 }
-
-// Example of a route to get user information by ID
-app.get('/user/:id', (req, res) => {
-  const userId = req.params.id;
-
-  // Assuming you have a function to retrieve user data from the database
-  const userData = getUserDataFromDatabase(userId);
-
-  if (userData) {
-    res.status(200).json(userData);
-  } else {
-    res.status(404).json({ error: 'User not found' });
-  }
-});
-
-// Helper function to retrieve user data from a database (you would need to implement this)
-function getUserDataFromDatabase(userId) {
-  // In a real-world scenario, retrieve user data from a database
-  // For simplicity, let's return null for non-existent users
-  return null;
-}
-
-// Set up your server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-export default app;

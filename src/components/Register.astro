@@ -1,41 +1,43 @@
 ---
-// Your frontmatter script here
+import siteConfig from '../data/site-config';
+import '../styles/global.css';
 ---
 
-<form>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br>
-    <button type="button" id="registerButton">Register</button>
+<form class="max-w-md mx-auto space-y-4" action="/api/submitForm" method="POST">
+    <div>
+        <label for="name" class="block">Your Name</label>
+        <input type="text" id="name" name="name" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+    </div>
+    <div>
+        <label for="student-name" class="block">Student's Name</label>
+        <input type="text" id="student-name" name="student-name" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+    </div>
+    <div>
+        <label for="phone" class="block">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+    </div>
+    <div>
+        <label for="email" class="block">Email</label>
+        <input type="email" id="email" name="email" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+    </div>
+    <div>
+        <label for="service" class="block">Service Requested</label>
+        <select id="service" name="service" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+            <option value="single-class">Single Class</option>
+            <option value="recurring">Recurring</option>
+        </select>
+    </div>
+    <div>
+        <label for="frequency" class="block">Frequency</label>
+        <input
+            type="text"
+            id="frequency"
+            name="frequency"
+            placeholder="e.g., Once a week"
+            class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+        />
+    </div>
+    <div>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Submit</button>
+    </div>
 </form>
-
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        const registerButton = document.getElementById('registerButton');
-        registerButton.addEventListener('click', registerUser);
-    });
-
-    async function registerUser() {
-        const username = (document.getElementById('username') as HTMLInputElement)?.value;
-        const email = (document.getElementById('email') as HTMLInputElement)?.value;
-        const password = (document.getElementById('password') as HTMLInputElement)?.value;
-
-        const response = await fetch('/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, email, password }),
-        });
-
-        if (response.ok) {
-            const userData = await response.json();
-            alert(`User registered successfully!\nUserID: ${userData.userId}`);
-        } else {
-            alert('Failed to register user.');
-        }
-    }
-</script>
