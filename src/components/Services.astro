@@ -6,19 +6,22 @@ import siteConfig from '../data/site-config';
 <div class="services-container">
     {
         siteConfig.services?.map((service) => (
-            <a href={service.url} class="service-link">
-                <section class="service-section">
-                    <div class="content-container">
-                        <div class="image-container">
-                            <img src={service.image.src} alt={service.image.alt} />
-                            <div class="overlay">
-                                <h1>{service.title}</h1>
-                            </div>
+            <section class="service-section">
+                <div class="content-container">
+                    <div class="image-container">
+                        <img src={service.image.src} alt={service.image.alt} />
+                        <div class="overlay">
+                            <h1>{service.title}</h1>
                         </div>
-                        <p>{service.description}</p>
                     </div>
-                </section>
-            </a>
+                    <p class="service-description text-center">{service.description}</p>
+                </div>
+                <div class="button-container">
+                    <a href={service.url} class="schedule-button" role="button">
+                        Schedule
+                    </a>
+                </div>
+            </section>
         ))
     }
 </div>
@@ -30,11 +33,13 @@ import siteConfig from '../data/site-config';
         font-weight: 900;
         margin-bottom: 50px;
     }
+
     .services-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start;
+        align-items: stretch;
+        margin-top: 20px;
     }
 
     .service-section {
@@ -43,43 +48,24 @@ import siteConfig from '../data/site-config';
         padding: 10px;
         position: relative;
         margin-bottom: 10px;
-    }
-
-    .service-link {
-        display: inline-block;
-        width: calc(33.33% - 20px);
-        text-decoration: none;
-        color: inherit;
+        min-height: 100%;
     }
 
     .content-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100%;
     }
 
     @media (max-width: 600px) {
-        .service-link,
-        .content-container {
-            width: 100%;
+        .service-section {
+            flex-basis: 100%;
         }
-
-        .services-container {
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #fff;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-    }
-
-    .service-link:hover {
-        opacity: 0.8;
     }
 
     .image-container {
-        height: 200px;
+        height: 60%;
         width: auto;
         overflow: hidden;
         position: relative;
@@ -87,7 +73,7 @@ import siteConfig from '../data/site-config';
 
     .image-container img {
         max-width: 100%;
-        height: auto;
+        height: 400px;
         min-width: 200px;
         object-fit: cover;
     }
@@ -103,5 +89,51 @@ import siteConfig from '../data/site-config';
         color: #fff;
         justify-content: center;
         align-items: center;
+    }
+
+    .service-title {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .service-description {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+
+    .button-container {
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .schedule-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 14px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        border-radius: 6px;
+        border: none;
+
+        background: #6e6d70;
+        box-shadow:
+            0px 0.5px 1px rgba(0, 0, 0, 0.1),
+            inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5),
+            0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+        color: #dfdedf;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .schedule-button:focus {
+        box-shadow:
+            inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+            0px 0.5px 1px rgba(0, 0, 0, 0.1),
+            0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+        outline: 0;
     }
 </style>
