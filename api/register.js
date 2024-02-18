@@ -7,6 +7,9 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { name, studentName, phone, email, service, frequency } = req.body;
 
+        // Calculate total amount based on service and frequency (assuming flat rate)
+        const amount = calculateAmount(service, frequency);
+
         try {
             // Create a transporter object using SMTP transport
             let transporter = nodemailer.createTransport({
@@ -23,8 +26,8 @@ export default async function handler(req, res) {
             // Send mail with defined transport object
             let info = await transporter.sendMail({
                 from: `"Averydavis.me" <${process.env.SMTP_USER}>`,
-                to: 'danielmyers300@gmail.com',
-                subject: 'Request for Tutoring',
+                to: email,
+                subject: 'Request for Tutoring and Invoice',
                 html: `
                     <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Student's Name:</strong> ${studentName}</p>
@@ -32,6 +35,15 @@ export default async function handler(req, res) {
                     <p><strong>Email:</strong> ${email}</p>
                     <p><strong>Service Requested:</strong> ${service}</p>
                     <p><strong>Frequency:</strong> ${frequency}</p>
+                    <p><strong>Amount:</strong> $${amount}</p>
+                    <p><strong>Invoice:</strong> Thank you for your request. Below is the invoice for the tutoring service:</p>
+                    <pre>
+                        -----------------------------------
+                        Service: ${service}
+                        Frequency: ${frequency}
+                        Amount: $${amount}
+                        -----------------------------------
+                    </pre>
                 `,
             });
 
@@ -45,4 +57,12 @@ export default async function handler(req, res) {
     } else {
         res.status(405).json({ message: 'Method Not Allowed' });
     }
+}
+
+// Function to calculate amount based on service and frequency
+function calculateAmount(service, frequency) {
+    // Here you can implement your logic to calculate the amount based on service and frequency
+    // For simplicity, assuming a flat rate for all services and frequencies
+    const flatRate = 50; // Change this as per your pricing
+    return flatRate;
 }
