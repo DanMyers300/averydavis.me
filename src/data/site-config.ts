@@ -49,14 +49,6 @@ const siteConfig: SiteConfig = {
             text: 'Home',
             href: '/'
         },
-        // {
-        //     text: 'Testimonials',
-        //     href: '/testimonials'
-        // },
-        {
-            text: 'FAQ',
-            href: '/faq'
-        },
         {
             text: 'Services',
             href: '/services'
