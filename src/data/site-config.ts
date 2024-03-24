@@ -53,6 +53,10 @@ const siteConfig: SiteConfig = {
             text: 'Services',
             href: '/services'
         },
+        {
+            text: 'Schedule',
+            href: '/schedule'
+        },
     ],
     hero: {
         title: 'Hello, I\'m Avery Davis',

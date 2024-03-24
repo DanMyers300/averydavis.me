@@ -23,19 +23,17 @@ import '../styles/global.css';
     <div>
         <label for="service" class="block">Service Requested</label>
         <select id="service" name="service" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-            <option value="single-class">Single Class</option>
-            <option value="recurring">Recurring</option>
+            <option value="single-class">Academic Tutoring</option>
+            <option value="recurring">Academic Coaching</option>
         </select>
     </div>
     <div>
-        <label for="frequency" class="block">Frequency</label>
-        <input
-            type="text"
-            id="frequency"
-            name="frequency"
-            placeholder="e.g., Once a week"
-            class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-        />
+        <label for="Focus Areas" class="block">Focus Areas</label>
+        <input type="text" id="focus" name="focus" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+    </div>
+    <div>
+        <label for="Notes" class="block">Notes</label>
+        <input type="text" id="notes" name="notes" class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
     </div>
     <div>
         <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Submit</button>
