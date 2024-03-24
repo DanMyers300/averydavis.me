@@ -5,10 +5,7 @@ dotenv.config();
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { name, studentName, phone, email, service, frequency } = req.body;
-
-        // Calculate total amount based on service and frequency (assuming flat rate)
-        const amount = calculateAmount(service, frequency);
+        const { name, studentName, phone, email, service, focus, notes } = req.body;
 
         try {
             // Create a transporter object using SMTP transport
@@ -34,16 +31,8 @@ export default async function handler(req, res) {
                     <p><strong>Phone:</strong> ${phone}</p>
                     <p><strong>Email:</strong> ${email}</p>
                     <p><strong>Service Requested:</strong> ${service}</p>
-                    <p><strong>Frequency:</strong> ${frequency}</p>
-                    <p><strong>Amount:</strong> $${amount}</p>
-                    <p><strong>Invoice:</strong>Below is the invoice for the tutoring service:</p>
-                    <pre>
-                        -----------------------------------
-                        Service: ${service}
-                        Frequency: ${frequency}
-                        Amount: $${amount}
-                        -----------------------------------
-                    </pre>
+                    <p><strong>Focus Area:</strong> ${focus}</p>
+                    <p><strong>Notes:</strong> ${notes}</p>
                 `,
             });
 
@@ -57,9 +46,4 @@ export default async function handler(req, res) {
     } else {
         res.status(405).json({ message: 'Method Not Allowed' });
     }
-}
-
-function calculateAmount(service, frequency) {
-    const flatRate = 50;
-    return flatRate;
 }
