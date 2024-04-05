@@ -1,0 +1,106 @@
+---
+import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
+
+const texts = [
+    ' Math and ELA K-12',
+    'AP World History',
+    'AP World Geography',
+    'AP Us History',
+    'Geometry',
+    'Algebra I & II',
+    'AP Psychology',
+    'SAT/PSAT Prep',
+    'College Admissions',
+    'College Essays'
+];
+---
+<!-- 
+
+This Carousel currently shows subjects but we want it to show client testimonials.
+It should display a row of cards with client testimonials on them.
+It should move left and right (touch would be nice).
+
+Testimonial #1:
+
+    Thank you so much for the detailed feedback Avery, I read every single one! I’m so happy you’re working with Lola. She had a rough go from being sick but she told me to that she is going to make an “academic comeback”. I told her that I love the positive attitude. 
+
+
+-->
+
+
+<style>
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+
+    .carousel-button {
+        position: absolute;
+        font-size: 2em;
+        background: none;
+        border: none;
+        color: black;
+        z-index: 1;
+    }
+
+    .carousel-container {
+        position: relative;
+        /* other styles */
+    }
+
+    .carousel-button.next {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        /* other styles */
+    }
+
+    .carousel-button.prev {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        /* other styles */
+    }
+</style>
+
+<div class="carousel-container">
+    <button class="carousel-button prev" id="prevButton"><IoArrowBack /></button>
+    <button class="carousel-button next" id="nextButton"><IoArrowForward /></button>
+    <div class="carousel" id="carousel" data-texts={JSON.stringify(texts)}></div>
+</div>
+
+<script>
+    let index = 0;
+    const carousel = document.getElementById('carousel');
+    const texts = carousel ? JSON.parse(carousel.dataset.texts as string) : [];
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    function updateCarousel() {
+        if (carousel) {
+            carousel.textContent = texts[index];
+        }
+    }
+
+    function prevSlide() {
+        index = (index - 1 + texts.length) % texts.length;
+        updateCarousel();
+    }
+
+    function nextSlide() {
+        index = (index + 1) % texts.length;
+        updateCarousel();
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener('click', prevSlide);
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', nextSlide);
+    }
+
+    updateCarousel();
+</script>
