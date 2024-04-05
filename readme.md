@@ -2,6 +2,8 @@ HOME PAGE
 
 Notes: needs more division and separation of paragraphs, bolding, making text larger, banners, carousels will help!
 
+REMOVE SUBJECTS
+
 Introduction
 
 Hello, I'm Avery Davis, an academic tutor and coach based in Dallas, TX, with two years of experience dedicated to helping students boost their confidence and improve their academic abilities. I approach my clients with a positive, kind, and patient attitude, and I prioritize research-based learning with a progress focused approach to tutoring. Additionally, my relative youth and recent involvement in the collegiate and high school educational systems bring an extra advantage to my students!
@@ -24,22 +26,6 @@ Client Testimonials Carousel:
 
 Thank you so much for the detailed feedback Avery, I read every single one! I’m so happy you’re working with Lola. She had a rough go from being sick but she told me to that she is going to make an “academic comeback”. I told her that I love the positive attitude. 
 
-
-
-Why me?
- 
-I graduated from the Liberal Arts and Science Academy, a prestigious high school ranked 32nd best in the United States. During my time there, I not only tackled rigorous courses but managed to maintain a strong GPA. This achievement earned me a full-ride scholarship along with a semesterly stipend courtesy of the University of Texas at Dallas through their Academic Excellence Scholarship.
-
-My passion for learning, teaching, and mentorship runs deep, and I believe my background in this field truly sets me apart. I graduated with a B.S. in Psychology with honors, and I'm currently continuing my own education, pursuing an M.S. in Applied Cognition and Neuroscience, with goals to continue my passion for helping students as a Professor. My background in psychology equips me with insights into memory, personality, and communication that I can't wait to share with my students. 
-
-
-ALT PAGES:
-
-Contact Me:
-
-averydavistutor@gmail.com
-Or text me at 
-512.568.5151
 
 My Services
 
@@ -73,8 +59,12 @@ Academic Coaching is for students who need extra help with organization and buil
  For both academic tutoring and coaching, you will receive an email on your child’s progress including grades, areas of concern, and things to celebrate! 
 
 
-Payment
-.
+
+New tabs:
+
+
+
+Payment: 
 
 I charge $37/hr for Academic Tutoring, and $45/hr for Academic Coaching. I offer tutoring once or more a week, depending on the student's needs! I accept payment via Venmo or Zelle.
 
@@ -82,6 +72,9 @@ I charge $37/hr for Academic Tutoring, and $45/hr for Academic Coaching. I offer
 
 
 
+Why me?
+ 
+I graduated from the Liberal Arts and Science Academy, a prestigious high school ranked 32nd best in the United States. During my time there, I not only tackled rigorous courses but managed to maintain a strong GPA. This achievement earned me a full-ride scholarship along with a semesterly stipend courtesy of the University of Texas at Dallas through their Academic Excellence Scholarship.
 
-
+My passion for learning, teaching, and mentorship runs deep, and I believe my background in this field truly sets me apart. I graduated with a B.S. in Psychology with honors, and I'm currently continuing my own education, pursuing an M.S. in Applied Cognition and Neuroscience, with goals to continue my passion for helping students as a Professor. My background in psychology equips me with insights into memory, personality, and communication that I can't wait to share with my students. 
 
