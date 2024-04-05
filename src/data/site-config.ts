@@ -54,6 +54,10 @@ const siteConfig: SiteConfig = {
             href: '/services'
         },
         {
+            text: 'Why me?',
+            href: '/why_me'
+        },
+        {
             text: 'Schedule',
             href: '/schedule'
         },
