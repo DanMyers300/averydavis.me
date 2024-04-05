@@ -89,7 +89,7 @@ const siteConfig: SiteConfig = {
         },
         {
             title: 'Academic Coaching',
-            description: 'Academic Coaching is for students who need extra help with organization and building executive functioning skills! Executive functioning consists of: Attention, Planning, Organization, Self-Control, Time-Management, and Working Memory.',
+            description: 'Academic Coaching is for students who need extra help with organization and building executive functioning skills! Executive functioning consists of: Attention, Planning, Organization, Self-Control, Time-Management, and Working Memory. If your student needs more help in these domains, Academic Coaching may be a better fit. We will focus on how the student keeps track of assignments, upcoming exams, and extracurriculars; Study skills and when to start studying for an upcoming exam; and how the student keeps their various classes organized.',
             image: {
                 src: 'https://www.academicapproach.com/wp-content/uploads/2023/12/academichabits.png',
                 alt: 'Academic Coaching'
