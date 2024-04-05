@@ -67,8 +67,8 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Hello, I\'m Avery Davis',
-        text: "I'm an academic tutor and coach based in Dallas, TX, with two years of experience dedicated to helping students boost their confidence and improve their academic abilities",
+        title: 'Hello',
+        text: 'I\'m Avery Davis',
         avatar: {
             src: '/avatar.jpg',
             alt: 'Avery Davis'
