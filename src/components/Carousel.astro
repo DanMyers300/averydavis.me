@@ -185,6 +185,27 @@ Testimonial #1:
             display: none;
         }
     }
+
+    /* New styles for better mobile responsiveness */
+    @media screen and (max-width: 520px) {
+        .slide-content {
+            margin: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+            white-space: nowrap; /* Prevents items from wrapping */
+        }
+        .card {
+            flex: 0 0 auto;
+            width: 80%; /* Adjust width as needed */
+            margin-right: 15px; /* Adjust margin as needed */
+        }
+        .swiper-navBtn {
+            display: none; /* Hide navigation buttons on mobile */
+        }
+        .swiper-pagination {
+            display: none; /* Hide pagination on mobile */
+        }
+    }
 </style>
 
 <html lang="en">
