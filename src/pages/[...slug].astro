@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import { type Image } from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-export const prerender = true
+export const prerender = true;
 
 export async function getStaticPaths() {
     const pages = await getCollection('pages');

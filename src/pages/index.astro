@@ -4,45 +4,64 @@ import Hero from '../components/Hero.astro';
 import siteConfig from '../data/site-config';
 import Carousel from '../components/Carousel.astro';
 ---
+
 <!--
 Notes: needs more division and separation of paragraphs, bolding, making text larger, banners, carousels will help!
 Does aligning the text to the left or center it make more sense?
 -->
+<style>
+    .background-image {
+        background-image: url('public/hero.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
-    <div class="relative bg-slate-50 border-b border-slate-100">
+    <main class="background-image">
         <Hero />
-    </div>
-    <main class="grow py-12 sm:py-16">
-
-    <div class="flex items-center justify-center flex-col p-4 max-w-6xl mx-auto">
-        <h1> Introduction: </h1>
-        --------------------------------
-        <p>
-            An academic tutor and coach based in Dallas, TX, with two years of experience dedicated to helping students boost their confidence and improve their academic abilities. I approach my clients with a positive, kind, and patient attitude, and I prioritize research-based learning with a progress focused approach to tutoring. Additionally, my relative youth and recent involvement in the collegiate and high school educational systems bring an extra advantage to my students!
-        </p>
-        <br>
-        <p>
-             My clientele encompasses a diverse range of ages, from 2nd graders to college students. I recognize that learning is a unique journey for each individual, and I tailor each session to meet my students' specific needs, accommodating their personal learning styles. 
-        </p>
-        <br>
-        <p>
-            I conduct virtual sessions via Zoom, schedule your first session with me today!
-
-            If you would  prefer in-person lessons for your learner, reach out to me with a time, day, and location in mind and I am happy to discuss it with you. 
-        </p>
-    </div>
-    <div class="flex items-center justify-center flex-col p-4 max-w-6xl mx-auto">
-        <h1> Progress focused Tutoring: </h1>
-        --------------------------------
-        <p>
-            In all of my tutoring services, I follow progress based tutoring. Each session, I’ll review with my students how they feel they are doing in their subject, if their grade is improving, and our strategy for the class going forward. This is important because some students may struggle with timeliness on assignments or focus, while others may struggle with curriculum. Speaking with the student and oftentimes the parents gives me insight on how to best tailor my services to your student.
-        </p>
-        <br>
-        <p>
-            With my Academic Coaching students, their grades will be more of a focus, with my detailed report of our session including missing work, low test scores/missing work, and what we will do to remedy them. 
-        </p>
-    </div>
-        <!--<Carousel />-->
+        <div class="flex items-center justify-center flex-col p-4 max-w-screen-lg mx-auto mb-1 text-slate-200" style="max-width: calc(100vw);">
+            <h1>Introduction:</h1>
+            <div class="border-2 border-black">
+                <p>
+                    An academic tutor and coach based in Dallas, TX, with two years of experience dedicated to helping students boost their confidence and
+                    improve their academic abilities. I approach my clients with a positive, kind, and patient attitude, and I prioritize research-based
+                    learning with a progress focused approach to tutoring. Additionally, my relative youth and recent involvement in the collegiate and high
+                    school educational systems bring an extra advantage to my students!
+                </p>
+                <br />
+                <p>
+                    My clientele encompasses a diverse range of ages, from 2nd graders to college students. I recognize that learning is a unique journey for
+                    each individual, and I tailor each session to meet my students' specific needs, accommodating their personal learning styles.
+                </p>
+                <br />
+                <p>
+                    I conduct virtual sessions via Zoom, schedule your first session with me today! If you would prefer in-person lessons for your learner,
+                    reach out to me with a time, day, and location in mind and I am happy to discuss it with you.
+                </p>
+            </div>
+        </div>
+        <div class="flex items-center justify-center flex-col p-4 max-w-screen-lg mx-auto mb-1 text-slate-200" style="max-width: calc(100vw);">
+            <h1>Testimonials:</h1>
+            <div>
+                <Carousel />
+            </div>
+        </div>
+        <div class="flex items-center justify-center flex-col p-4 max-w-screen-lg mx-auto text-slate-200" style="max-width: calc(100vw - 3rem);">
+            <h1>Progress focused Tutoring:</h1>
+            <div class="border-2 border-black">
+                <p>
+                    In all of my tutoring services, I follow progress based tutoring. Each session, I’ll review with my students how they feel they are doing in
+                    their subject, if their grade is improving, and our strategy for the class going forward. This is important because some students may
+                    struggle with timeliness on assignments or focus, while others may struggle with curriculum. Speaking with the student and oftentimes the
+                    parents gives me insight on how to best tailor my services to your student.
+                </p>
+                <br />
+                <p>
+                    With my Academic Coaching students, their grades will be more of a focus, with my detailed report of our session including missing work, low
+                    test scores/missing work, and what we will do to remedy them.
+                </p>
+            </div>
+        </div>
     </main>
 </BaseLayout>

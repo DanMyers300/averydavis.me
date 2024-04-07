@@ -73,9 +73,6 @@ const siteConfig: SiteConfig = {
             src: '/avatar.jpg',
             alt: 'Avery Davis'
         },
-        backgroundImage: {
-            src: '/hero.jpg'
-        }
     },
     services: [
         {
