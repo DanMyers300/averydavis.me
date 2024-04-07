@@ -1,29 +1,392 @@
 ---
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 
-const responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3 // optional, default to 1.
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        slidesToSlide: 2 // optional, default to 1.
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-        slidesToSlide: 1 // optional, default to 1.
-    }
-};
 ---
 
-<Carousel responsive={responsive} +->
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
-    <div>Item 4</div>
-</Carousel>
+<!-- 
+
+This Carousel currently shows subjects but we want it to show client testimonials.
+It should display a row of cards with client testimonials on them.
+It should move left and right (touch would be nice).
+
+Testimonial #1:
+
+    Thank you so much for the detailed feedback Avery, I read every single one! I’m so happy you’re working with Lola. She had a rough go from being sick but she told me to that she is going to make an “academic comeback”. I told her that I love the positive attitude. 
+
+
+-->
+<script>
+    var swiper = new Swiper('.slide-content', {
+        slidesPerView: 3,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: 'true',
+        fade: 'true',
+        grabCursor: 'true',
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            520: {
+                slidesPerView: 2
+            },
+            950: {
+                slidesPerView: 3
+            }
+        }
+    });
+</script>
+
+<style>
+    /* Google Fonts - Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #efefef;
+    }
+    .slide-container {
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+    }
+    .slide-content {
+        margin: 0 40px;
+        overflow: hidden;
+        border-radius: 25px;
+    }
+    .card {
+        border-radius: 25px;
+        background-color: #fff;
+    }
+    .image-content,
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 14px;
+    }
+    .image-content {
+        position: relative;
+        row-gap: 5px;
+        padding: 25px 0;
+    }
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #4070f4;
+        border-radius: 25px 25px 0 25px;
+    }
+    .overlay::before,
+    .overlay::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        height: 40px;
+        width: 40px;
+        background-color: #4070f4;
+    }
+    .overlay::after {
+        border-radius: 0 25px 0 0;
+        background-color: #fff;
+    }
+    .card-image {
+        position: relative;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background: #fff;
+        padding: 3px;
+    }
+    .card-image .card-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #4070f4;
+    }
+    .name {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+    }
+    .description {
+        font-size: 14px;
+        color: #707070;
+        text-align: center;
+    }
+    .button {
+        border: none;
+        font-size: 16px;
+        color: #fff;
+        padding: 8px 16px;
+        background-color: #4070f4;
+        border-radius: 6px;
+        margin: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .button:hover {
+        background: #265df2;
+    }
+
+    .swiper-navBtn {
+        color: #6e93f7;
+        transition: color 0.3s ease;
+    }
+    .swiper-navBtn:hover {
+        color: #4070f4;
+    }
+    .swiper-navBtn::before,
+    .swiper-navBtn::after {
+        font-size: 35px;
+    }
+    .swiper-button-next {
+        right: 0;
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-pagination-bullet {
+        background-color: #6e93f7;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #4070f4;
+    }
+
+    @media screen and (max-width: 768px) {
+        .slide-content {
+            margin: 0 10px;
+        }
+        .swiper-navBtn {
+            display: none;
+        }
+    }
+
+    /* New styles for better mobile responsiveness */
+    @media screen and (max-width: 520px) {
+        .slide-content {
+            margin: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+            white-space: nowrap; /* Prevents items from wrapping */
+        }
+        .card {
+            flex: 0 0 auto;
+            width: 80%; /* Adjust width as needed */
+            margin-right: 15px; /* Adjust margin as needed */
+        }
+        .swiper-navBtn {
+            display: none; /* Hide navigation buttons on mobile */
+        }
+        .swiper-pagination {
+            display: none; /* Hide pagination on mobile */
+        }
+    }
+</style>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--<title>Responsive Card Slider</title>-->
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="" alt="" class="card-img" />
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Client Name</h2>
+                            <p class="description">
+                                The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </body>
+
+    <!-- Swiper JS -->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js" is:inline></script>
+
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js" is:inline></script>
+</html>
