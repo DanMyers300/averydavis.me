@@ -52,7 +52,7 @@ const { pathname } = Astro.url;
                 {primaryNavLinks.map((link) => (
                     <HeaderNavLink
                         class:list={[
-                            'pr-6 py-1 text-lg font-bold sm:text-xl relative transition duration-300 hover:text-slate-500',
+                            'pr-6 py-1 text-lg font-bold sm:text-xl relative text-white transition duration-300 hover:text-slate-500',
                             {
                                 'after:content-[""] after:w-3.5 after:h-1 after:absolute after:left-0 after:bottom-0 after:bg-primary':
                                     link.href === pathname || link.href === pathname.replace(/\/$/, '')

@@ -2,7 +2,7 @@
 import siteConfig from '../data/site-config';
 ---
 
-<h1 class="header">Services</h1>
+<h1 class="header text-slate-200">Services</h1>
 <div class="services-container">
     {
         siteConfig.services?.map((service) => (
@@ -14,7 +14,7 @@ import siteConfig from '../data/site-config';
                             <h1>{service.title}</h1>
                         </div>
                     </div>
-                    <p class="service-description text-center">{service.description}</p>
+                    <p class="service-description text-slate-200 text-xl text-center">{service.description}</p>
                 </div>
             </section>
         ))
